@@ -37,6 +37,14 @@ public class QuizController {
         return "quiz/question-two";
     }
 
+    @GetMapping("question-three")
+    public String displayQuestionThree(Model model) {
+        questions.add("What is your main fashion style?");
+        model.addAttribute("questionThree", questions.get(2));
+
+        return "quiz/question-three";
+    }
+
 //    @PostMapping("create")
 //    public String processCreateEventForm(Model model) {
 //        List<String> questions = new ArrayList<>();
