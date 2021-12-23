@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hairstyle Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<h1>Which hairstyle will be yours next?</h1>
+
+<p th:text="${question}"></p>
+
+
+<form method="post" id="form1">
+    <input type="radio" id="choiceA" name="answerChoices" value="answerA">
+    <label for="choiceA">Rap/Trap</label><br>
+
+    <input type="radio" id="choiceB" name="answerChoices" value="answerB">
+    <label for="choiceB">Rock</label><br>
+
+    <input type="radio" id="choiceC" name="answerChoices" value="answerC">
+    <label for="choiceC">Worship</label><br>
+
+    <input type="radio" id="choiceD" name="answerChoices" value="answerD">
+    <label for="choiceD">R&B</label><br>
+
+    <input type="radio" id="choiceE" name="answerChoices" value="answerE">
+    <label for="choiceE">Neo-Soul</label><br>
+
+
+    <a th:href="@{/quiz/question-two}" class="next round">&#8250;</a>
+
+</form>
+
+
+
+<input type="submit" form="form1" value="Submit" >
+
+
+    <!--<ul>-->
+<!--   <th:block th:each="event : ${events}">-->
+<!--      <li th:text="${event}"></li>-->
+<!--   </th:block>-->
+<!--</ul>-->
+
+</body>
+</html>

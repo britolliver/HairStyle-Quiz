@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hairstyle Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<p th:text="${questionTwo}"></p>
+
+
+<form method="post" id="form1">
+    <input type="radio" id="choiceA" name="answerChoices" value="answerA">
+    <label for="choiceA">Soul food</label><br>
+
+    <input type="radio" id="choiceB" name="answerChoices" value="answerB">
+    <label for="choiceB">Mexican</label><br>
+
+    <input type="radio" id="choiceC" name="answerChoices" value="answerC">
+    <label for="choiceC">American</label><br>
+
+    <input type="radio" id="choiceD" name="answerChoices" value="answerD">
+    <label for="choiceD">Cajun</label><br>
+
+    <input type="radio" id="choiceE" name="answerChoices" value="answerE">
+    <label for="choiceE">Asian</label><br>
+
+    <a href="#" class="previous round">&#8249;</a>
+    <a href="#" class="next round">&#8250;</a>
+
+</form>
+</body>
+</html>
