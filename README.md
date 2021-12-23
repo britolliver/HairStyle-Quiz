@@ -1,6 +1,6 @@
 # HairStyle-Quiz
 
-My very first independent project. I am still learning a lot and feel like a beginner so I wanteed it to be simple.
+My very first independent project. I am still learning a lot and feel like a beginner so I wanteed it to be simple. It is called demo because I followed a spring-boot demo to set up this project because I thought Thymeleaf was not working.
 
 ## Purpose: ##
   
