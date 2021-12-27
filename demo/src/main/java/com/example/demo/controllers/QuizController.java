@@ -45,6 +45,68 @@ public class QuizController {
         return "quiz/question-three";
     }
 
+    @GetMapping("question-four")
+    public String displayQuestionFour(Model model) {
+        questions.add("What kind of earrings do you like to wear the most?");
+        model.addAttribute("questionFour", questions.get(3));
+
+        return "quiz/question-four";
+    }
+
+
+    @GetMapping("question-five")
+    public String displayQuestionFive(Model model) {
+        questions.add("What is your favorite season of the year?");
+        model.addAttribute("questionFive", questions.get(4));
+
+        return "quiz/question-five";
+    }
+
+    @GetMapping("question-six")
+    public String displayQuestionSix(Model model) {
+        questions.add("How long do you want to wear this style?");
+        model.addAttribute("questionSix", questions.get(5));
+
+        return "quiz/question-six";
+    }
+
+    @GetMapping("question-seven")
+    public String displayQuestionSeven(Model model) {
+        questions.add("What is your favorite 90's show?");
+        model.addAttribute("questionSeven", questions.get(6));
+
+        return "quiz/question-seven";
+    }
+
+    @GetMapping("question-eight")
+    public String displayQuestionEight(Model model) {
+        questions.add("How do you like to spend your days off?");
+        model.addAttribute("questionEight", questions.get(7));
+
+        return "quiz/question-eight";
+    }
+
+    @GetMapping("question-nine")
+    public String displayQuestionNine(Model model) {
+        questions.add("How do you like to wear your makeup");
+        model.addAttribute("questionNine", questions.get(8));
+
+        return "quiz/question-nine";
+    }
+
+    @GetMapping("question-ten")
+    public String displayQuestionTen(Model model) {
+        questions.add("What is your favorite house/room decor style?");
+        model.addAttribute("questionTen", questions.get(9));
+
+        return "quiz/question-ten";
+    }
+
+
+    //keep track of answers
+    //store answers
+    //calculate answers
+
 //    @PostMapping("create")
 //    public String processCreateEventForm(Model model) {
 //        List<String> questions = new ArrayList<>();
@@ -54,4 +116,5 @@ public class QuizController {
 //        return "templates/index";
 //    }
 
+    // on click display results of quiz
 }

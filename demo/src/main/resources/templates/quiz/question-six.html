@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8"/>
+   <title>Hairstyle Quiz</title>
+</head>
+<body>
+<p th:text="${questionSix}"></p>
+
+
+<form method="post" id="form1">
+   <input type="radio" id="choiceA" name="answerChoices" value="answerA">
+   <label for="choiceA">2-3 months or more</label><br>
+
+   <input type="radio" id="choiceB" name="answerChoices" value="answerB">
+   <label for="choiceB">1.5- 2 months</label><br>
+
+   <input type="radio" id="choiceC" name="answerChoices" value="answerC">
+   <label for="choiceC">Less than one month</label><br>
+
+   <input type="radio" id="choiceD" name="answerChoices" value="answerD">
+   <label for="choiceD">A week or two</label><br>
+
+   <input type="radio" id="choiceE" name="answerChoices" value="answerE">
+   <label for="choiceE">Just for an event</label><br>
+
+   <a th:href="@{/quiz/question-five}" class="previous round">&#8249;</a>
+   <a th:href="@{/quiz/question-seven}" class="next round">&#8250;</a>
+
+
+
+</form>
+</body>
+</html>

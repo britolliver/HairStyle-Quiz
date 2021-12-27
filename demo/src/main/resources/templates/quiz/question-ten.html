@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8"/>
+   <title>Hairstyle Quiz</title>
+</head>
+<body>
+<p th:text="${questionTen}"></p>
+
+
+<form method="post" id="form1">
+   <input type="radio" id="choiceA" name="answerChoices" value="answerA">
+   <label for="choiceA">Eclectic</label><br>
+
+   <input type="radio" id="choiceB" name="answerChoices" value="answerB">
+   <label for="choiceB">Whatever decor includes soft rugs and inside hammocks</label><br>
+
+   <input type="radio" id="choiceC" name="answerChoices" value="answerC">
+   <label for="choiceC">Bohemian</label><br>
+
+   <input type="radio" id="choiceD" name="answerChoices" value="answerD">
+   <label for="choiceD">Modern chic</label><br>
+
+   <input type="radio" id="choiceE" name="answerChoices" value="answerE">
+   <label for="choiceE">Hollywood Regency</label><br>
+
+   <a th:href="@{/quiz/question-nine}" class="previous round">&#8249;</a>
+
+
+
+
+</form>
+</body>
+</html>
