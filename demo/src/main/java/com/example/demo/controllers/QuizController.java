@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,14 +109,12 @@ public class QuizController {
     //store answers
     //calculate answers
 
-//    @PostMapping("create")
-//    public String processCreateEventForm(Model model) {
-//        List<String> questions = new ArrayList<>();
-//        questions.add("What is your favorite genre of music?");
-//
-//       model.addAttribute("question", questions);
-//        return "templates/index";
-//    }
+    @PostMapping("create")
+    public String processCreateEventForm(Model model, HttpServletRequest request) throws ServletException, IOException {
+        String choices = request.getParameter("answerChoices");
+        model.addAttribute("answerChoices", choices);
+        return "templates/index";
+    }
 
     // on click display results of quiz
 }
