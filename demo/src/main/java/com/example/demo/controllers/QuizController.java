@@ -109,12 +109,21 @@ public class QuizController {
     //store answers
     //calculate answers
 
-    @PostMapping("create")
+    @GetMapping("results")
+    public String displayResults(Model model, HttpServletRequest request) throws ServletException, IOException {
+        String choices = request.getParameter("answerChoicesForNumOne");
+        model.addAttribute("answerChoicesForNumOne", choices);
+        return "quiz/results";
+    }
+
+    @PostMapping("results")
     public String processCreateEventForm(Model model, HttpServletRequest request) throws ServletException, IOException {
-        String choices = request.getParameter("answerChoices");
-        model.addAttribute("answerChoices", choices);
-        return "templates/index";
+        String choices = request.getParameter("answerChoicesForNumOne");
+
+
+        return "quiz/results";
     }
 
     // on click display results of quiz
+
 }

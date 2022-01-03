@@ -9,24 +9,24 @@
 
 
 <form method="post" id="form1">
-   <input type="radio" id="choiceA" name="answerChoices" value="answerA">
+   <input type="radio" id="choiceA" name="answerChoicesForNumTen" value="answerA">
    <label for="choiceA">Eclectic</label><br>
 
-   <input type="radio" id="choiceB" name="answerChoices" value="answerB">
+   <input type="radio" id="choiceB" name="answerChoicesForNumTen" value="answerB">
    <label for="choiceB">Whatever decor includes soft rugs and inside hammocks</label><br>
 
-   <input type="radio" id="choiceC" name="answerChoices" value="answerC">
+   <input type="radio" id="choiceC" name="answerChoicesForNumTen" value="answerC">
    <label for="choiceC">Bohemian</label><br>
 
-   <input type="radio" id="choiceD" name="answerChoices" value="answerD">
+   <input type="radio" id="choiceD" name="answerChoicesForNumTen" value="answerD">
    <label for="choiceD">Modern chic</label><br>
 
-   <input type="radio" id="choiceE" name="answerChoices" value="answerE">
+   <input type="radio" id="choiceE" name="answerChoicesForNumTen" value="answerE">
    <label for="choiceE">Hollywood Regency</label><br>
 
    <a th:href="@{/quiz/question-nine}" class="previous round">&#8249;</a>
 
-
+   <input type="submit" value="Submit" formaction= "/quiz/results">
 
 
 </form>
