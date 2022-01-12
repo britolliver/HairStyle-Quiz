@@ -8,7 +8,7 @@
 <p th:text="${questionThree}"></p>
 
 
-<form method="post" id="form1">
+<form method="post">
     <input type="radio" id="choiceA" name="answerChoicesForNumThree" value="answerA">
     <label for="choiceA">Artsy</label><br>
 
@@ -25,7 +25,8 @@
     <label for="choiceE">Chic</label><br>
 
     <a th:href="@{/quiz/question-two}" class="previous round">&#8249;</a>
-    <a th:href="@{/quiz/question-four}" class="next round">&#8250;</a>
+<!--    <a th:href="@{/quiz/question-four}" class="next round">&#8250;</a>-->
+    <input type="submit" value="Submit" formaction="/quiz/results">
 
 
 
