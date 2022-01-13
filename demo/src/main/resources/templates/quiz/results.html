@@ -5,7 +5,10 @@
 <title></title>
 </head>
 <body>
-<p th:text="${answers}"></p>
+<ol>
+    <li th:each="answer : ${answers}" th:text="${answer}"></li>
+</ol>
+
 
 
 </body>

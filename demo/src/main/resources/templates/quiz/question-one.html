@@ -12,7 +12,8 @@
 
 
 <form method="post">
-    <input type="radio" id="choiceA" name="answerChoicesForNumOne" value="answerA">
+
+   <input type="radio" id="choiceA" name="answerChoicesForNumOne" value="answerA">
     <label for="choiceA">Rap/Trap</label><br>
 
     <input type="radio" id="choiceB" name="answerChoicesForNumOne" value="answerB">
@@ -28,7 +29,27 @@
     <label for="choiceE">Neo-Soul</label><br>
 
 
+    <p th:text="${questionTwo}"></p>
+
+    <input type="radio" id="choiceF" name="answerChoicesForNumTwo" value="answerG">
+    <label for="choiceA">Soul food</label><br>
+
+    <input type="radio" id="choiceG" name="answerChoicesForNumTwo" value="answerF">
+    <label for="choiceB">Mexican</label><br>
+
+    <input type="radio" id="choiceH" name="answerChoicesForNumTwo" value="answerH">
+    <label for="choiceC">American</label><br>
+
+    <input type="radio" id="choiceI" name="answerChoicesForNumTwo" value="answerI">
+    <label for="choiceD">Cajun</label><br>
+
+    <input type="radio" id="choiceJ" name="answerChoicesForNumTwo" value="answerJ">
+    <label for="choiceE">Asian</label><br>
+
+
     <a th:href="@{/quiz/question-two}" class="next round">&#8250;</a>
+    <input type="submit" value="Submit" formaction="/quiz/results">
+
 
 
 

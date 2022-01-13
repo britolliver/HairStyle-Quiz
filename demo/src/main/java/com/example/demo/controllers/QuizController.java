@@ -22,26 +22,28 @@ public class QuizController {
     public String displayQuizForm(Model model) {
 
         questions.add("What is your favorite genre of music?");
+        questions.add("What is your favorite meal?");
         model.addAttribute("question", questions.get(0));
+        model.addAttribute("questionTwo", questions.get(1));
 
         return "quiz/question-one";
     }
 
-    @GetMapping("question-two")
-    public String displayQuestionTwo(Model model) {
-        questions.add("What is your favorite meal?");
-        model.addAttribute("questionTwo", questions.get(1));
-
-        return "quiz/question-two";
-    }
-
-    @GetMapping("question-three")
-    public String displayQuestionThree(Model model) {
-        questions.add("What is your main fashion style?");
-        model.addAttribute("questionThree", questions.get(2));
-
-        return "quiz/question-three";
-    }
+//    @GetMapping("question-two")
+//    public String displayQuestionTwo(Model model) {
+//        questions.add("What is your favorite meal?");
+//        model.addAttribute("questionTwo", questions.get(1));
+//
+//        return "quiz/question-two";
+//    }
+//
+//    @GetMapping("question-three")
+//    public String displayQuestionThree(Model model) {
+//        questions.add("What is your main fashion style?");
+//        model.addAttribute("questionThree", questions.get(2));
+//
+//        return "quiz/question-three";
+//    }
 //
 //    @GetMapping("question-four")
 //    public String displayQuestionFour(Model model) {
@@ -106,62 +108,91 @@ public class QuizController {
     //calculate answers
 
     @PostMapping("results")
-    public String displayResults(Model model, @RequestParam(required=false) String answerChoicesForNumOne, @RequestParam(required=false) String answerChoicesForNumTwo, @RequestParam(required = false) String answerChoicesForNumThree) {
-//        if(answerChoicesForNumOne.equals("answerA")){
-//            model.addAttribute("answers", "answerA");
-//        } else if (answerChoicesForNumOne.equals("answerB")){
-//            model.addAttribute("answers", "answerB");
-//        } else if (answerChoicesForNumOne.equals("answerC")){
-//            model.addAttribute("answers", "answerC");
-//        } else if(answerChoicesForNumOne.equals("answerD")){
-//            model.addAttribute("answers", "answerD");
-//        } else {
-//            model.addAttribute("answers", "answerE");
-//        }
-
-        answers.add(answerChoicesForNumOne);
-        answers.add(answerChoicesForNumTwo);
-        answers.add(answerChoicesForNumThree);
-
-        HashMap<String, Integer> userAnswer = new HashMap<>();
-            for( String answer : answers){
-
-                    if (!userAnswer.containsKey(answer)) {
-                        userAnswer.put(answer, 1);
-                    } else {
-                        userAnswer.put(answer, userAnswer.get(answer) + 1);
-                    }
+    public String displayResults(Model model, @RequestParam(required = false) String answerChoicesForNumOne, @RequestParam(required=false) String answerChoicesForNumTwo) {
 
 
-            }
+        if(answerChoicesForNumOne.equals("answerA")){
+            answers.add(answerChoicesForNumOne);
+            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumOne.equals("answerB")){
+            answers.add(answerChoicesForNumOne);
+            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumOne.equals("answerC")){
+            answers.add(answerChoicesForNumOne);
+            model.addAttribute("answers", answers);
+        } else if(answerChoicesForNumOne.equals("answerD")){
+            answers.add(answerChoicesForNumOne);
+            model.addAttribute("answers", answers);
+        } else {
+            answers.add(answerChoicesForNumOne);
+            model.addAttribute("answers", answers);
+        }
 
-        int maxValueInMap = (Collections.max(userAnswer.values()));
-            for(Map.Entry<String, Integer> choice : userAnswer.entrySet()){
-                if(choice.getValue() == maxValueInMap){
-                    model.addAttribute("answers", choice.getKey());
-                }
+        if(answerChoicesForNumTwo.equals("answerG")){
+            answers.add(answerChoicesForNumTwo);
+            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumTwo.equals("answerF")){
+            answers.add(answerChoicesForNumTwo);
+            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumTwo.equals("answerH")){
+            answers.add(answerChoicesForNumTwo);
+            model.addAttribute("answers", answers);
+        } else if(answerChoicesForNumTwo.equals("answerI")){
+            answers.add(answerChoicesForNumTwo);
+            model.addAttribute("answers", answers);
+        } else {
+            answers.add(answerChoicesForNumTwo);
+            model.addAttribute("answers", answers);
+        }
 
-            }
+
+
+//        answers.add(answerChoicesForNumOne);
+//        answers.add(answerChoicesForNumTwo);
+//        answers.add(answerChoicesForNumThree);
+
+//        HashMap<String, Integer> userAnswer = new HashMap<>();
+//            for( String answer : answers){
+//
+//                    if (!userAnswer.containsKey(answer)) {
+//                        userAnswer.put(answer, 1);
+//                        model.addAttribute("answers", userAnswer.get(0));
+//                    } else {
+//                        userAnswer.put(answer, userAnswer.get(answer) + 1);
+//                        model.addAttribute("answers", userAnswer.get(1));
+//                    }
+//
+//            }
+
+//        int maxValueInMap = (Collections.max(userAnswer.values()));
+//            for(Map.Entry<String, Integer> choice : userAnswer.entrySet()){
+//                if(choice.getValue() == maxValueInMap){
+//                    model.addAttribute("answers", choice.getKey());
+//                } else {
+//                    model.addAttribute("answers", "Answer not available");
+//                }
+//
+//            }
 
 
 
         return "quiz/results";
     }
 
-//    @PutMapping("results")
-//    public String getAnswers(@RequestParam String answerChoicesForNumOne, @RequestParam String answerChoicesForNumTwo, @RequestParam String answerChoicesForNumThree){
+//    @PostMapping()
+//    public String getAnswers( Model model, @RequestParam String answerChoicesForNumTwo){
 //
-//        if (answerChoicesForNumOne.contains("answerA")){
-//            answersForQuestionOne.add(answerChoicesForNumOne);
-//
-//        } else if (answerChoicesForNumOne.contains("answerB")){
-//            answersForQuestionOne.add(answerChoicesForNumOne);
-//        } else if(answerChoicesForNumOne.contains("answerC")){
-//            answersForQuestionOne.add(answerChoicesForNumOne);
-//        } else if(answerChoicesForNumOne.contains("answerD")){
-//            answersForQuestionOne.add(answerChoicesForNumOne);
+//        if(answerChoicesForNumTwo.equals("answerA")){
+//            answers.add(answerChoicesForNumTwo);
+//            model.addAttribute("answers", answers.get(1));
+//        } else if (answerChoicesForNumTwo.equals("answerB")){
+//            model.addAttribute("answers", "answerB");
+//        } else if (answerChoicesForNumTwo.equals("answerC")){
+//            model.addAttribute("answers", "answerC");
+//        } else if(answerChoicesForNumTwo.equals("answerD")){
+//            model.addAttribute("answers", "answerD");
 //        } else {
-//            answersForQuestionOne.add(answerChoicesForNumOne);
+//            model.addAttribute("answers", "answerE");
 //        }
 //
 //        return "redirect:/quiz/results";
