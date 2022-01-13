@@ -23,8 +23,12 @@ public class QuizController {
 
         questions.add("What is your favorite genre of music?");
         questions.add("What is your favorite meal?");
+        questions.add("What is your main fashion style?");
+        questions.add("What kind of earrings do you like to wear the most?");
         model.addAttribute("question", questions.get(0));
         model.addAttribute("questionTwo", questions.get(1));
+        model.addAttribute("questionThree", questions.get(2));
+        model.addAttribute("questionFour", questions.get(3));
 
         return "quiz/question-one";
     }
@@ -108,41 +112,76 @@ public class QuizController {
     //calculate answers
 
     @PostMapping("results")
-    public String displayResults(Model model, @RequestParam(required = false) String answerChoicesForNumOne, @RequestParam(required=false) String answerChoicesForNumTwo) {
+    public String displayResults(Model model, @RequestParam(required = false) String answerChoicesForNumOne, @RequestParam(required=false) String answerChoicesForNumTwo, @RequestParam(required = false) String answerChoicesForNumThree,
+                                 @RequestParam(required = false) String answerChoicesForNumFour) {
 
 
         if(answerChoicesForNumOne.equals("answerA")){
             answers.add(answerChoicesForNumOne);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         } else if (answerChoicesForNumOne.equals("answerB")){
             answers.add(answerChoicesForNumOne);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         } else if (answerChoicesForNumOne.equals("answerC")){
             answers.add(answerChoicesForNumOne);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         } else if(answerChoicesForNumOne.equals("answerD")){
             answers.add(answerChoicesForNumOne);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         } else {
             answers.add(answerChoicesForNumOne);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         }
 
-        if(answerChoicesForNumTwo.equals("answerG")){
+        if(answerChoicesForNumTwo.equals("answerA")){
             answers.add(answerChoicesForNumTwo);
-            model.addAttribute("answers", answers);
-        } else if (answerChoicesForNumTwo.equals("answerF")){
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumTwo.equals("answerB")){
             answers.add(answerChoicesForNumTwo);
-            model.addAttribute("answers", answers);
-        } else if (answerChoicesForNumTwo.equals("answerH")){
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumTwo.equals("answerC")){
             answers.add(answerChoicesForNumTwo);
-            model.addAttribute("answers", answers);
-        } else if(answerChoicesForNumTwo.equals("answerI")){
+//            model.addAttribute("answers", answers);
+        } else if(answerChoicesForNumTwo.equals("answerD")){
             answers.add(answerChoicesForNumTwo);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
         } else {
             answers.add(answerChoicesForNumTwo);
-            model.addAttribute("answers", answers);
+//            model.addAttribute("answers", answers);
+        }
+
+        if(answerChoicesForNumThree.equals("answerA")){
+            answers.add(answerChoicesForNumThree);
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumThree.equals("answerB")){
+            answers.add(answerChoicesForNumThree);
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumThree.equals("answerC")){
+            answers.add(answerChoicesForNumThree);
+//            model.addAttribute("answers", answers);
+        } else if(answerChoicesForNumThree.equals("answerD")){
+            answers.add(answerChoicesForNumThree);
+//            model.addAttribute("answers", answers);
+        } else {
+            answers.add(answerChoicesForNumThree);
+//            model.addAttribute("answers", answers);
+        }
+
+        if(answerChoicesForNumFour.equals("answerA")){
+            answers.add(answerChoicesForNumFour);
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumFour.equals("answerB")){
+            answers.add(answerChoicesForNumFour);
+//            model.addAttribute("answers", answers);
+        } else if (answerChoicesForNumFour.equals("answerC")){
+            answers.add(answerChoicesForNumFour);
+//            model.addAttribute("answers", answers);
+        } else if(answerChoicesForNumFour.equals("answerD")){
+            answers.add(answerChoicesForNumFour);
+//            model.addAttribute("answers", answers);
+        } else {
+            answers.add(answerChoicesForNumFour);
+//            model.addAttribute("answers", answers);
         }
 
 
@@ -151,28 +190,28 @@ public class QuizController {
 //        answers.add(answerChoicesForNumTwo);
 //        answers.add(answerChoicesForNumThree);
 
-//        HashMap<String, Integer> userAnswer = new HashMap<>();
-//            for( String answer : answers){
-//
-//                    if (!userAnswer.containsKey(answer)) {
-//                        userAnswer.put(answer, 1);
-//                        model.addAttribute("answers", userAnswer.get(0));
-//                    } else {
-//                        userAnswer.put(answer, userAnswer.get(answer) + 1);
-//                        model.addAttribute("answers", userAnswer.get(1));
-//                    }
-//
-//            }
+        HashMap<String, Integer> userAnswer = new HashMap<>();
+            for( String answer : answers){
 
-//        int maxValueInMap = (Collections.max(userAnswer.values()));
-//            for(Map.Entry<String, Integer> choice : userAnswer.entrySet()){
-//                if(choice.getValue() == maxValueInMap){
-//                    model.addAttribute("answers", choice.getKey());
-//                } else {
-//                    model.addAttribute("answers", "Answer not available");
-//                }
-//
-//            }
+                    if (!userAnswer.containsKey(answer)) {
+                        userAnswer.put(answer, 1);
+//                        model.addAttribute("answers", userAnswer.get(0));
+                    } else {
+                        userAnswer.put(answer, userAnswer.get(answer) + 1);
+//                        model.addAttribute("answers", userAnswer.get(1));
+                    }
+
+            }
+
+        int maxValueInMap = (Collections.max(userAnswer.values()));
+            for(Map.Entry<String, Integer> choice : userAnswer.entrySet()){
+                if(choice.getValue() == maxValueInMap){
+                    model.addAttribute("answers", choice.getKey());
+                } else {
+                    model.addAttribute("answers", "Answer not available");
+                }
+
+            }
 
 
 
