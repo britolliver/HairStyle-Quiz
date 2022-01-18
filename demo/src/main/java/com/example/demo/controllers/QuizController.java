@@ -206,20 +206,59 @@ public class QuizController {
         }
         if(biggestListInList.contains("answerA")){
             model.addAttribute("answer", "wigs/sew-in/locs");
+            return "quiz/wigs";
         } else if(biggestListInList.contains("answerB")){
             model.addAttribute("answer", "braids");
+            return "quiz/braids";
         } else if(biggestListInList.contains("answerC")){
             model.addAttribute("answer", "twists");
+            return "quiz/twists";
         } else if(biggestListInList.contains("answerD")){
             model.addAttribute("answer", "natural");
+            return "quiz/natural";
         } else if(biggestListInList.contains("answerE")){
             model.addAttribute("answer", "updo");
+            return "quiz/updo";
         } else {
             model.addAttribute("answer", "don't know yet");
+
+
         }
 
+        return "quiz/braids";
 
-        return "quiz/results";
     }
+
+
+    @GetMapping("wigs")
+    public String getWigsAndSewInsPage(){
+
+        return "quiz/wigs";
+    }
+
+    @GetMapping("braids")
+    public String getBraidsPage(){
+
+        return "quiz/braids";
+    }
+
+    @GetMapping("natural")
+    public String getNaturalHairstylePage(){
+
+        return "quiz/natural";
+    }
+
+    @GetMapping("twists")
+    public String getTwistsPage(){
+
+        return "quiz/twists";
+    }
+
+    @GetMapping("updo")
+    public String getUpDoPage(){
+
+        return "quiz/updo";
+    }
+
 
 }

@@ -22,3 +22,17 @@ a:hover {
 .round {
   border-radius: 50%;
 }
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+.color{
+    color:red;
+
+}

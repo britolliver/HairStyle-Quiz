@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>HairStyle Quiz</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+<p class="color">Your results: Wigs, Sew-Ins or Locs!</p>
+
+<div class="row">
+    <div class="column">
+        <img th:src="@{/images/locs.jpg}" alt="Locs" style="width:100%">
+    </div>
+
+    <div class="column">
+        <img th:src="@{/images/sew-in.jpg}" alt="Sew In" style="width:100%">
+    </div>
+
+    <div class="column">
+        <img th:src="@{/images/wig.jpg}" alt="Wig" style="width:100%">
+    </div>
+
+</div>
+</body>
+</html>
